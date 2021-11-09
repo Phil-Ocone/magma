@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:xenial-20210114
 ENV MAGMA_ROOT /root
 ENV DOCKER_VERSION "17.03.0-ce"
 RUN     apt-get update \
