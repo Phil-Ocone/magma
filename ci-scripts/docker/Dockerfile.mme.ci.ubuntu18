@@ -50,7 +50,7 @@ RUN cd $MAGMA_ROOT/lte/gateway/docker/mme/configs/ && \
 ################################################################
 # Target Image
 ################################################################
-FROM ubuntu:bionic as magma-mme
+FROM ubuntu:18.04 as magma-mme
 
 ENV MAGMA_ROOT=/magma
 ENV C_BUILD=/build/c
