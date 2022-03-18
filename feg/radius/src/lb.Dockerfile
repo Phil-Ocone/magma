@@ -21,7 +21,7 @@ RUN ./run.sh build
 COPY cwf/radius/docker-entrypoint.sh /src/cwf/radius/bin/docker-entrypoint.sh
 RUN chmod 0755 /src/cwf/radius/bin/docker-entrypoint.sh
 
-FROM alpine
+FROM alpine:3.15
 RUN apk add gettext musl
 COPY --from=builder /src/cwf/radius/radius /app/
 COPY --from=builder /src/cwf/radius/*.config.json /app/
