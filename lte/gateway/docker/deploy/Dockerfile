@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:20.04
 ENV MAGMA_ROOT /root/magma
 RUN apt-get update && \
     apt-get -y install curl make virtualenv zip rsync git software-properties-common python3-pip python-dev && \
