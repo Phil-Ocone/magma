@@ -1,7 +1,7 @@
 ################################################################
 # Builder Image (can also be used as developer's image)
 ################################################################
-FROM ubuntu:focal as bazel_builder
+FROM ubuntu:20.04 as bazel_builder
 
 ENV TZ=America/New_York \
     DEBIAN_FRONTEND=noninteractive
