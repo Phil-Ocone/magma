@@ -8,7 +8,7 @@ ENV GOPROXY https://proxy.golang.org
 RUN go mod download
 RUN ./run.sh build
 
-FROM alpine
+FROM alpine:3.15.4
 RUN apk add gettext musl
 COPY --from=builder /src/radius/radius /app/
 COPY --from=builder /src/radius/config/ /app/
