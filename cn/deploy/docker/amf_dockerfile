@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:1.23.2
 ADD ./index.html /usr/share/nginx/html/
 RUN chmod +r /usr/share/nginx/html/index.html
 CMD ["nginx","-g","daemon off;"]
