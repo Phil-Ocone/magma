@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # Development image for test, precommit, etc.
 # -----------------------------------------------------------------------------
-ARG baseImage="ubuntu:bionic"
+ARG baseImage=ubuntu:18.04
 FROM ${baseImage} as base
 
 # Add the magma apt repo
@@ -112,13 +112,13 @@ RUN ./run.sh build
 # -----------------------------------------------------------------------------
 # Go-cache base image
 # -----------------------------------------------------------------------------
-FROM ubuntu:bionic as gocache
+FROM ubuntu:18.04 as gocache
 COPY --from=builder /root/.cache /root/.cache
 
 # -----------------------------------------------------------------------------
 # Production image
 # -----------------------------------------------------------------------------
-FROM ubuntu:bionic AS gateway_go
+FROM ubuntu:18.04 AS gateway_go
 ARG MAGMA_BUILD_BRANCH=unknown
 ARG MAGMA_BUILD_TAG=unknown
 ARG MAGMA_BUILD_COMMIT_HASH=unknonw
