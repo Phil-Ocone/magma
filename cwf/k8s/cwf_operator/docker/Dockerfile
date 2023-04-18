@@ -9,7 +9,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-FROM ubuntu:bionic as builder
+FROM ubuntu:18.04 as builder
 
 # Add the magma apt repo
 RUN apt-get update && \
@@ -60,7 +60,7 @@ RUN go install ./cmd/manager/
 # -----------------------------------------------------------------------------
 # Production image
 # -----------------------------------------------------------------------------
-FROM ubuntu:bionic as cwf_operator
+FROM ubuntu:18.04 as cwf_operator
 
 ENV OPERATOR=/usr/local/bin/cwf-operator \
     USER_UID=1001 \
