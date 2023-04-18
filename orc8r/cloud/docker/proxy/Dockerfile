@@ -1,6 +1,6 @@
 ARG NGHTTP_VERSION=1.40.0
 
-FROM ubuntu:bionic as builder
+FROM ubuntu:18.04 as builder
 
 # From nghttp2 readme, minus libsystemd-dev
 RUN apt-get update && \
@@ -26,7 +26,7 @@ RUN ./configure --with-mruby --enable-app --disable-examples --disable-python-bi
 RUN make
 RUN make install DESTDIR=/tmp/nghttp2/install
 
-FROM ubuntu:bionic
+FROM ubuntu:18.04
 
 ARG CNTLR_FILES=src/magma/orc8r/cloud/docker/controller
 ARG PROXY_FILES=src/magma/orc8r/cloud/docker/proxy
