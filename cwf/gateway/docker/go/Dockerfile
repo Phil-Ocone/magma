@@ -1,4 +1,4 @@
-ARG baseImage="ubuntu:bionic"
+ARG baseImage=ubuntu:18.04
 FROM ${baseImage} as base
 
 # Add the magma apt repo
@@ -106,7 +106,7 @@ RUN make -C $MAGMA_ROOT/cwf/gateway build
 # -----------------------------------------------------------------------------
 # Production image
 # -----------------------------------------------------------------------------
-FROM ubuntu:bionic AS cwag_go
+FROM ubuntu:18.04 AS cwag_go
 
 # Install envdir.
 RUN apt-get -y update && apt-get -y install daemontools curl arping
