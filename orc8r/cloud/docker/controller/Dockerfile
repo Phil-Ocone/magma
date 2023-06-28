@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
 # Base: for tests, precommit, codegen, etc.
 # ------------------------------------------------------------------------------
-FROM ubuntu:xenial as base
+FROM ubuntu:xenial-20210416 as base
 
 ENV GO111MODULE on
 ENV GOPATH ${USER}/go
@@ -79,7 +79,7 @@ RUN . /etc/profile.d/env.sh && make build
 # ------------------------------------------------------------------------------
 # Production
 # ------------------------------------------------------------------------------
-FROM ubuntu:xenial
+FROM ubuntu:xenial-20210416
 
 # Apt runtime deps
 RUN apt-get update && apt-get install -y \
