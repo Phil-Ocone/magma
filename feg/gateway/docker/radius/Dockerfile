@@ -23,7 +23,7 @@ COPY feg/radius/src/config/samples/radius.cwf.config.json.template /radius/src/r
 COPY feg/gateway/services/aaa /gateway/services/aaa
 RUN ./run.sh build
 
-FROM alpine
+FROM alpine:3.18.3
 RUN apk add gettext musl
 COPY --from=builder /radius/src/radius /app/
 COPY --from=builder /radius/src/radius.config.json.template /app/
