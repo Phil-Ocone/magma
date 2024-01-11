@@ -69,7 +69,7 @@ flake8==3.9.0
     #   wemake-python-styleguide
 gitdb==4.0.2
     # via gitpython
-gitpython==3.1.0
+gitpython==3.1.41
     # via bandit
 importlib-metadata==4.5.0
     # via
