@@ -1,6 +1,6 @@
 # Builder image to generate proto files
 # -----------------------------------------------------------------------------
-FROM ubuntu:focal AS builder
+FROM ubuntu:20.04 AS builder
 
 # Install the runtime deps from apt.
 RUN apt-get -y update && apt-get -y install curl make virtualenv zip \
@@ -35,7 +35,7 @@ RUN make -C $MAGMA_ROOT/lte/gateway/python protos
 # -----------------------------------------------------------------------------
 # Production image
 # -----------------------------------------------------------------------------
-FROM ubuntu:focal AS gateway_python
+FROM ubuntu:20.04 AS gateway_python
 
 # Add the magma apt repo
 RUN apt-get update && \
