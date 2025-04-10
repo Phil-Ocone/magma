@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # Builder image to generate proto files
 # -----------------------------------------------------------------------------
-FROM ubuntu:focal AS builder
+FROM ubuntu:20.04 AS builder
 
 # workaround to avoid interactive tzdata configuration
 ARG DEBIAN_FRONTEND=noninteractive
@@ -63,7 +63,7 @@ RUN make -C $MAGMA_ROOT/orc8r/gateway/python swagger
 # -----------------------------------------------------------------------------
 # Production image
 # -----------------------------------------------------------------------------
-FROM ubuntu:focal AS gateway_python
+FROM ubuntu:20.04 AS gateway_python
 ARG MAGMA_BUILD_BRANCH=unknown
 ARG MAGMA_BUILD_TAG=unknown
 ARG MAGMA_BUILD_COMMIT_HASH=unknonw
