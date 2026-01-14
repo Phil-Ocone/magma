@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ################################################################################
-FROM nginx
+FROM nginx:1.29.4-trixie
 
 # install openssl to generate default key
 RUN apt update -y && apt install openssl -y
